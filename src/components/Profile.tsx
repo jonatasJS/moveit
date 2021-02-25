@@ -12,7 +12,7 @@ export function Profile() {
   return (
     <div className={styles.profileContainer}>
       <img
-        src={dataUser ? dataUser.avatar_url : 'images/user.png'}
+        src={dataUser.avatar_url ? dataUser.avatar_url : 'images/user.png'}
         alt={dataUser.name ? dataUser.name : "Usuario"}
       />
 
