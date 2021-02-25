@@ -14,7 +14,8 @@ export function CompletedChanllenges() {
   return (
     <div className={styles.completedChanllengesContainer}>
       <Head>
-        <title>Inicio | {dataUser.name ? dataUser.name : 'Usuario'}</title>
+        {/* <title>Inicio | {dataUser.name ? dataUser.name : 'Usuario'}</title> */}
+        <title>Inicio | Usuario</title>
       </Head>
       <span>Desafios Completos</span>
       <span>{ challengesCompleted }</span>

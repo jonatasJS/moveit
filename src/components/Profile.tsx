@@ -12,12 +12,15 @@ export function Profile() {
   return (
     <div className={styles.profileContainer}>
       <img
-        src={dataUser.avatar_url ? dataUser.avatar_url : 'images/user.png'}
-        alt={dataUser.name ? dataUser.name : "Usuario"}
+        // src={dataUser.avatar_url ? dataUser.avatar_url : 'images/user.png'}
+        src="images/user.png"
+        // alt={dataUser.name ? dataUser.name : "Usuario"}
+        alt="Usuario"
       />
 
       <div>
-        <strong>{dataUser.name ? dataUser.name : "Usuario"}</strong>
+        {/* <strong>{dataUser.name ? dataUser.name : "Usuario"}</strong> */}
+        <strong>Usuario</strong>
         
         <p>
           <img src="icons/level.svg" alt="level"/>
