@@ -1,45 +1,14 @@
 import { useContext, useEffect, useState } from 'react';
-import { ChallengesContext } from '../contexts/ChallengesContext';
+import { CountdownContex } from '../contexts/CountdownContext';
 import styles from '../styles/components/Countdown.module.css';
 
-let countdownTimeout: NodeJS.Timeout;
-
 export function Countdown() {
-  const { startNewChallenge } = useContext(ChallengesContext);
+  const { minutes, seconds, hasFinished, isActive, resetCountdown, startCountdown } = useContext(CountdownContex);
 
-  const timeValue = 0.05 * 60;
-  const [ Time, setTime ] = useState(timeValue);
-  const [ isActive, setIsActive ] = useState(false);
-  const [ hasFinished, setHasFinished ] = useState(false);
-  const minutes = Math.floor(Time / 60);
-  const seconds = Time % 60;
   const [ minuteLeft, minuteRight ] = String(minutes).padStart(2, '0').split('');
   const [ secondLeft, secondRight ] = String(seconds).padStart(2, '0').split('');
 
-  function startCountdown() {
-    setIsActive(true);
-    setHasFinished(false);
-  }
-
-  function resetCountdown() {
-    clearTimeout(countdownTimeout);
-    setIsActive(false);
-    setTime(timeValue);
-  }
-
-  useEffect(() => {
-    if (isActive && Time > 0) {
-      countdownTimeout = setTimeout(() => {
-        setTime(Time - 1);
-      }, 1000);
-    } else if (isActive && Time == 0) {
-      setHasFinished(true);
-      setIsActive(false);
-      setTime(timeValue);
-      startNewChallenge();
-    }
-  }, [ isActive, Time ])
-
+  
   return (
     <div>
       <div className={styles.countdownContainer}>
@@ -76,7 +45,7 @@ export function Countdown() {
               <svg
                 stroke="currentColor"
                 fill="currentColor"
-                stroke-width="0"
+                strokeWidth="0"
                 version="1.1"
                 viewBox="0 0 16 16"
                 color="#666666"
@@ -100,7 +69,7 @@ export function Countdown() {
               <svg
                 stroke="currentColor"
                 fill="currentColor"
-                stroke-width="0"
+                strokeWidth="0"
                 viewBox="0 0 448 512"
                 height="1em"
                 width="1em"
