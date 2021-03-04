@@ -1,18 +1,18 @@
 # Move.it
 
 <p>
-  <img src="https://img.shields.io/badge/made%20by-JONATAS%20SOUZA%20SOARES-6E40C9?style=flat-square">
+  <img src="https://img.shields.io/badge/made%20by-RAFAEL%20MARTINS-6E40C9?style=flat-square">
   <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/sozinhol/moveit?color=6E40C9&style=flat-square">
   <img alt="GitHub Top Language" src="https://img.shields.io/github/languages/top/sozinhol/moveit?color=6E40C9&style=flat-square">
   <a href="https://opensource.org/licenses/MIT">
     <img alt="License" src="https://img.shields.io/badge/license-MIT-6E40C9?style=flat-square">
   </a>
-  <a href="https://github.com/sozinhol/moveit/main">
-    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/jonatas/moveit?color=6E40C9&style=flat-square">
+  <a href="https://github.com/sozinhol/moveit/commits/master">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/sozinhol/moveit?color=6E40C9&style=flat-square">
   </a>
 </p>
 
-<img align="right" src="github/icon.svg" width="35%" alt="Move.it">
+<img align="right" src=".github/icon.svg" width="35%" alt="Move.it">
 
 ## Tópicos 
 
@@ -41,7 +41,7 @@ O Move.it é um App que utiliza a técnica de [pomodoro](https://pt.wikipedia.or
 <br>
 
 <p align="center">
-  <img src="github/cover.png" alt="Página inicial">
+  <img src=".github/cover.png" alt="Página inicial">
 </p>
 
 ## Tecnologias
@@ -64,7 +64,7 @@ git clone https://github.com/sozinhol/moveit.git
 # ou use a opção de download.
 
 # Entre na pasta web com 
-cd moveIt
+cd moveit
 
 # Instale as dependências
 yarn install
@@ -91,4 +91,5 @@ Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](/LICENSE) para m
 
 Feito com :purple_heart: by [Jonatas Souza Soares](https://github.com/sozinhol)
 
-[![Linkedin Badge](https://img.shields.io/badge/-Jonatas%20Souza%20Soares-6E40C9?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/j%C3%B4natas-souza-soares-02b5b019b/)](https://www.linkedin.com/in/j%C3%B4natas-souza-soares-02b5b019b/)
+[![Linkedin Badge](https://img.shields.io/badge/-Rafael%20Martins-6E40C9?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/soaresjonatas398/)](https://www.linkedin.com/in/soaresjonatas398/) 
+[![Gmail Badge](https://img.shields.io/badge/soaresjonatas398@gmail.com-soaresjonatas398@gmail.com-6E40C9?style=flat-square&logo=Gmail&logoColor=white&link=mailto:soaresjonatas398@gmail.com)](mailto:soaresjonatas398@gmail.com)

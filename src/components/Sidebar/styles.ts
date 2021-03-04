@@ -4,6 +4,10 @@ interface LightSwitchProps {
   activeTheme: string;
 }
 
+export const LinkToHome = styled.a`
+  cursor: pointer;
+`;
+
 export const Container = styled.div`
   position: fixed;
   top: 0;
