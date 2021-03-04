@@ -12,7 +12,7 @@
   </a>
 </p>
 
-<img align="right" src=".github/icon.svg" width="35%" alt="Move.it">
+<img align="right" src="github/icon.svg" width="35%" alt="Move.it">
 
 ## Tópicos 
 
@@ -41,7 +41,7 @@ O Move.it é um App que utiliza a técnica de [pomodoro](https://pt.wikipedia.or
 <br>
 
 <p align="center">
-  <img src=".github/cover.png" alt="Página inicial">
+  <img src="github/cover.png" alt="Página inicial">
 </p>
 
 ## Tecnologias
