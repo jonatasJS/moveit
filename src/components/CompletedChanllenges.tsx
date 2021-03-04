@@ -5,11 +5,6 @@ import styles from '../styles/components/CompletedChanllenges.module.css'
 
 export function CompletedChanllenges() {
   const { challengesCompleted, completeChallenge } = useContext(ChallengesContext);
-  let { dataUser, getDataUser } = useContext(ChallengesContext);
-  
-  setTimeout(getDataUser, 1000)
-
-  console.log(dataUser)
 
   return (
     <div className={styles.completedChanllengesContainer}>

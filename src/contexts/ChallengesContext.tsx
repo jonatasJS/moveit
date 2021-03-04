@@ -1,6 +1,8 @@
-import { truncate } from 'fs/promises';
+import Cookies from 'js-cookie';
 import { createContext, ReactNode, ReactNodeArray, useEffect, useState } from 'react';
+
 import challenges from '../../challenges.json';
+import LevelUpModal from '../components/modals/LevelUpModal';
 
 interface Challenge {
   type: 'body' | 'eye';
@@ -19,7 +21,7 @@ interface ChallengesContextData {
   levelUp: () => void;
   resetChallenge: () => void;
   completeChallenge: () => void;
-  getDataUser: () => void;
+  closeLevelUpModal: () => void;
   level: number;
   activeChallenge: Challenge;
   currentExperience: number;
@@ -29,19 +31,32 @@ interface ChallengesContextData {
 
 interface ChallengesProviderProps {
   children: ReactNode;
+  level: number;
+  currentExperience: number;
+  challengesCompleted: number;
 }
 
 export const ChallengesContext = createContext({} as ChallengesContextData);
 
-export function ChallengesProvider({ children }: ChallengesProviderProps) {
+export function ChallengesProvider({
+  children,
+  ...rest
+}: ChallengesProviderProps) {
   let data = require('../pages/api/axios');
 
-  const [ level, setLevel ] = useState(1);
-  const [ currentExperience, setCurrentExperience ] = useState(0);
-  const [ challengesCompleted, setChallengesCompleted ] = useState(0);
+  const [ level, setLevel ] = useState(rest.level ?? 1);
+  const [ currentExperience, setCurrentExperience ] = useState(rest.currentExperience ?? 0);
+  const [ challengesCompleted, setChallengesCompleted ] = useState(rest.challengesCompleted ?? 0);
   const [ activeChallenge, setActiveChallenge ] = useState(null);
   const [ dataUser, setDataUser ] = useState(data);
+  const [ isLevelUpModalOpen, setIsLevelUpModalOpen ] = useState(false);
   const experienceToNextLevel = Math.pow((level + 1) * 4, 2);
+
+  useEffect(() => {
+    Cookies.set('level', String(level));
+    Cookies.set('currentExperience', String(currentExperience));
+    Cookies.set('challengesCompleted', String(challengesCompleted));
+  }, [ level, currentExperience, challengesCompleted ]);
 
   useEffect(() => {
     Notification.requestPermission();
@@ -54,14 +69,13 @@ export function ChallengesProvider({ children }: ChallengesProviderProps) {
     }
   },500)
 
-  function getDataUser() {
-    console.log('chegou')
-    setDataUser(data);
-    console.log(dataUser)
-  }
-
   function levelUp() {
     setLevel(level + 1);
+    setIsLevelUpModalOpen(true);
+  }
+
+  function closeLevelUpModal() {
+    setIsLevelUpModalOpen(false);
   }
 
   function startNewChallenge() {
@@ -113,11 +127,13 @@ export function ChallengesProvider({ children }: ChallengesProviderProps) {
       activeChallenge,
       resetChallenge,
       completeChallenge,
-      getDataUser,
-      dataUser
+      dataUser,
+      closeLevelUpModal
       }}
     >
       { children }
+
+      { isLevelUpModalOpen ? <LevelUpModal /> : '' }
     </ChallengesContext.Provider>
   );
 }

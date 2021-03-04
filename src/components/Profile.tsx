@@ -5,9 +5,6 @@ import styles from '../styles/components/Profile.module.css';
 
 export function Profile() {
   const { level } = useContext(ChallengesContext);
-  let { dataUser, getDataUser } = useContext(ChallengesContext);
-  
-  setTimeout(getDataUser, 1000)
 
   return (
     <div className={styles.profileContainer}>
