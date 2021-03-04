@@ -7,7 +7,7 @@
   <a href="https://opensource.org/licenses/MIT">
     <img alt="License" src="https://img.shields.io/badge/license-MIT-6E40C9?style=flat-square">
   </a>
-  <a href="https://github.com/sozinhol/moveit/commits/main">
+  <a href="https://github.com/sozinhol/moveit/main">
     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/jonatas/moveit?color=6E40C9&style=flat-square">
   </a>
 </p>
