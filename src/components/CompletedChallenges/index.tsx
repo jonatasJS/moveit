@@ -8,7 +8,7 @@ const CompletedCahallenges = () => {
   const { challengesCompleted } = useContext(ChallengesContext);
   return (
     <Container>
-      <span><FiAward size={16} />Desafios Completos</span>
+      <span><FiAward color="D4AF37" size={16} />Desafios Completos</span>
       <span>{challengesCompleted}</span>
     </Container>
   );
