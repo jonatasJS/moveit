@@ -19,7 +19,8 @@ export const Container = styled.header`
     div {
       height: 4px;
       background: ${({ theme }) => theme.colors.green};
-      border-radius: 4px;
+      box-shadow: 0px 0px 10px 1px #31FF00;
+      border-radius: 5px;
     }
   }
 `;

@@ -13,7 +13,7 @@ export const Container = styled.div`
   height: 100%;
   text-align: center;
   background: ${({ theme }) => theme.colors.backgroundLight};
-  border-radius: 5px;
+  border-radius: 10px;
   box-shadow: ${({ theme }) => theme.boxShadow};
 `;
 
