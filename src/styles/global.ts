@@ -22,6 +22,12 @@ export default createGlobalStyle`
   body {
     color: ${({ theme }) => theme.colors.text};
     background: ${({ theme }) => theme.colors.background};
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
   }
 
   body,

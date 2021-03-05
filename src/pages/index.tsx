@@ -1,8 +1,10 @@
 import { GetServerSideProps } from 'next';
 import { ChallengesProvider } from '../contexts/ChallengesContext';
-import { signIn, useSession } from 'next-auth/client';
+import { useSession } from 'next-auth/client';
 
 import HomePage from '../templates/HomePage';
+import LoadScreen from '../components/LoadScreen';
+import LoginInterface from '../components/LoginInterface';
 
 interface HomeProps {
   level: number;
@@ -25,21 +27,17 @@ export default function Home (props: HomeProps) {
   const [ session, loading ] = useSession();
   
   return (
-  <>
-  {loading ? <div>Carregando...</div> : <div>
-    {!session ?
-    <>
-      Not signed in <br/>
-      <button onClick={(): Promise<void> => signIn('auth0')}>Sign in</button>
-    </> :
-    <ChallengesProvider
-      level={props.level}
-      currentExperience={props.currentExperience}
-      challengesCompleted={props.challengesCompleted}
-    >
-      <HomePage />
-    </ChallengesProvider>}
-  </div> }
-  </>
+  <ChallengesProvider
+    level={props.level}
+    currentExperience={props.currentExperience}
+    challengesCompleted={props.challengesCompleted}
+  >
+    {loading ?
+      <LoadScreen /> :
+      <div>
+        {!session ? <LoginInterface /> : <HomePage />}
+      </div>
+    }
+  </ChallengesProvider>
 )}
 
