@@ -1,6 +1,8 @@
 import { useContext } from 'react';
 import { FiHome as Home } from 'react-icons/fi';
 import { HiOutlineLightBulb as Light } from 'react-icons/hi';
+import { AiOutlineTrophy as Trophy } from 'react-icons/ai';
+
 import Link from 'next/link';
 
 import { ThemeContext } from '../../contexts/ThemeContext';
@@ -22,6 +24,7 @@ const Sidebar = () => {
         <LightSwitch activeTheme={theme}>
           <Light onClick={toggleTheme} size={32} />
         </LightSwitch>
+        <Trophy color="CCD6F6" size={32}/>
       </nav>
     </Container>
   );

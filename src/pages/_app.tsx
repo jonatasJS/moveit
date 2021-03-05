@@ -1,9 +1,12 @@
 import { AppProps } from 'next/app';
+import { Provider } from 'next-auth/client';
 import { ThemeProvider } from '../contexts/ThemeContext';
 
 const MyApp = ({ Component, pageProps }: AppProps) => (
   <ThemeProvider>
-    <Component {...pageProps} />
+    <Provider session={pageProps.session}>
+      <Component {...pageProps} />
+    </Provider>
   </ThemeProvider>
 );
 
