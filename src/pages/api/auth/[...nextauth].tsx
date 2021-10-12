@@ -12,4 +12,4 @@ const options = {
   ]
 }
 
-export default (req: NextApiRequest, res: NextApiResponse): Promise<void | [] | {}> => NextAuth(req, res, options);
+export default (req: NextApiRequest, res: NextApiResponse): Promise<{}> => NextAuth(req, res, options);
