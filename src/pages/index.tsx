@@ -34,9 +34,10 @@ export default function Home (props: HomeProps) {
   >
     {loading ?
       <LoadScreen /> :
-      <div>
-        {!session ? <LoginInterface /> : <HomePage />}
-      </div>
+      <>
+        {/*!session ? <LoginInterface /> : <HomePage />*/}
+        <HomePage />
+      </>
     }
   </ChallengesProvider>
 )}
