@@ -32,13 +32,14 @@ export default function Home (props: HomeProps) {
     currentExperience={props.currentExperience}
     challengesCompleted={props.challengesCompleted}
   >
-    {loading ?
+      <HomePage />
+    {/*loading ?
       <LoadScreen /> :
       <>
-        {/*!session ? <LoginInterface /> : <HomePage />*/}
+        {!session ? <LoginInterface /> : <HomePage />}
         <HomePage />
       </>
-    }
+    */}
   </ChallengesProvider>
 )}
 
